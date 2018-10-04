@@ -10,11 +10,13 @@ export default class App extends React.Component {
 
   constructor(props) {
     super(props);
+
     this.state = { 
       testingRow: 0,
       testingCol: 0,
-      numberOfCols: 1,
-      numberOfRows: 60,
+      numberOfCols: 6,
+      numberOfRows: 12,
+      startedTest: false,
     };
 
     // Toggle the state every second
@@ -31,7 +33,37 @@ export default class App extends React.Component {
 
       
       });
-    }, 7);
+    }, 1000);
+  }
+
+  startTest(){
+
+    // Get random button
+
+    // Give row callbackFunc + col-index
+
+  }
+
+  // Callback function when button pressed
+  pressedButton(row,col,time){
+
+
+
+    
+  }
+
+
+  doneWithButton(row,col){
+
+    // Register
+     // Wait 1 sek
+
+
+    // Pick random button of those left
+     // Run next button
+
+     // If no button left --> Sammanställ/normera 0-1
+     // Sätt färgen på knappar enl heatmat
   }
 
   
