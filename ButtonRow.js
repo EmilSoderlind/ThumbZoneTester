@@ -11,9 +11,9 @@ export default class ButtonRow extends React.Component {
 
         for (let i = 0; i < this.props.nrOfCols; i++) {
             if (i == this.props.columnNumber) {
-                cols.push(<CustomButton rowNumber={this.props.rowNumber} columnNumber={i} isCounting='true' key={i}/>)
+                cols.push(<CustomButton rowNumber={this.props.rowNumber} columnNumber={i} isCounting='true' callbackFunc={this.props.callbackFunc} key={i}/>)
             } else {
-                cols.push(<CustomButton rowNumber={this.props.rowNumber} columnNumber={i} key={i} />)
+                cols.push(<CustomButton rowNumber={this.props.rowNumber} columnNumber={i} isCounting='false' callbackFunc={this.props.callbackFunc} key={i} />)
             }
         }
 
