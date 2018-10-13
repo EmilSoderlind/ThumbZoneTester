@@ -91,12 +91,14 @@ const styles = StyleSheet.create({
        flex: 1,
        backgroundColor: 'yellow',
        justifyContent: 'center',
-       alignItems: 'center'
+       alignItems: 'center',
+       borderRadius: 1,
    },
    buttonOff: {
        flex: 1,
        justifyContent: 'center',
-       alignItems: 'center'
+       alignItems: 'center',
+       borderRadius: 1,
    },
    textStajl: {
        color: 'blue',
