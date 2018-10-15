@@ -21,8 +21,8 @@ export default class App extends React.Component {
     this.state = { 
       testingRow: -1,
       testingCol: -1,
-      numberOfCols: 2,
-      numberOfRows: 2,
+      numberOfCols: 6,
+      numberOfRows: 12,
       resultArray: -1,
       doneWithTest: false,
       highestResult: 0,
@@ -95,13 +95,8 @@ export default class App extends React.Component {
   }
 
   startTest(){
-
     
     this.setRandomButton();
-
-
-
-    // Give row callbackFunc + col-index
 
   }
 
@@ -120,8 +115,6 @@ export default class App extends React.Component {
     if (that) {
       setTimeout(function () { that.setRandomButton() }, 1000);
     } 
-
-
   }
 
   doneWithTest(){
@@ -132,15 +125,6 @@ export default class App extends React.Component {
       testingCol: -1,
       doneWithTest: true
     })
-
-    /*
-    console.log("")
-    for (let row = 0; row < this.state.numberOfRows; row++) {
-      console.log(this.state.resultArray[row])
-    }
-    console.log("---")
-
-    */
 
     // Normalize
     
@@ -162,46 +146,10 @@ export default class App extends React.Component {
       highestResult: highestNumberFound,
       lowestResult: lowestNumberFound
     })
-
-    /*  
-    //console.log("Highest number found: " + highestNumberFound)
-    //console.log("Lowest number found: " + lowestNumberFound)
-
-    for (let row = 0; row < this.state.numberOfRows; row++) {
-      for (let col = 0; col < this.state.numberOfCols; col++) {    
-
-        let maxMmin = highestNumberFound-lowestNumberFound
-        let valMmin = this.state.resultArray[col][row]-lowestNumberFound
-        this.state.resultArray[col][row] = valMmin/maxMmin
-
-      }
-    }
-    */
-    //console.log(this.state.resultArray)
+  
+    // Exporting result
     console.log(JSON.stringify(this.state.resultArray))
-    
     this.sendEmail(JSON.stringify(this.state.resultArray))
-
-
-    /*
-    for (let row = 0; row < this.state.numberOfRows; row++) {
-      console.log(this.state.resultArray[row])
-    }
-    */
-
-    /* // Restartability
-    var that = this;
-    if (that) {
-      setTimeout(function () {
-        Alert.alert(
-          'DONE',
-          'Thank you for your participation',
-          [
-            { text: '-', onPress: () => this.componentWillMount() }],
-          { cancelable: false }
-        ) }, 10000);
-    } */
-    
   }
 
   sendEmail = (JSON) => {
@@ -246,7 +194,6 @@ export default class App extends React.Component {
 
   getRandomInt(max) {
     let random = Math.floor(Math.random() * Math.floor(max));
-    //console.log("max: " + max + " -> random: " + random);
     return random;
   }
 
