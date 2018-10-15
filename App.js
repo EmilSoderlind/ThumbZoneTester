@@ -4,6 +4,8 @@ import { StyleSheet, Text, View, Button, Dimensions, Alert } from 'react-native'
 import ButtonRow from './ButtonRow';
 import CustomButton from './CustomButton';
 
+import email from 'react-native-email'
+
 export default class App extends React.Component {
 
 
@@ -19,8 +21,8 @@ export default class App extends React.Component {
     this.state = { 
       testingRow: -1,
       testingCol: -1,
-      numberOfCols: 6,
-      numberOfRows: 12,
+      numberOfCols: 2,
+      numberOfRows: 2,
       resultArray: -1,
       doneWithTest: false,
       highestResult: 0,
@@ -175,8 +177,12 @@ export default class App extends React.Component {
       }
     }
     */
+    //console.log(this.state.resultArray)
+    console.log(JSON.stringify(this.state.resultArray))
+    
+    this.sendEmail(JSON.stringify(this.state.resultArray))
 
-    console.log(this.state.resultArray)
+
     /*
     for (let row = 0; row < this.state.numberOfRows; row++) {
       console.log(this.state.resultArray[row])
@@ -196,6 +202,14 @@ export default class App extends React.Component {
         ) }, 10000);
     } */
     
+  }
+
+  sendEmail = (JSON) => {
+    const to = ['soderlindemil@gmail.com'] // string or array of email addresses
+    email(to, {
+      subject: "ThumbZoneTester result[" + this.state.numberOfCols + "][" + this.state.numberOfRows +"] ID: " + Date.now(),
+      body: JSON
+    }).catch(console.error)
   }
 
   
@@ -237,6 +251,8 @@ export default class App extends React.Component {
   }
 
 }
+
+
 
 function sleep(milliseconds) {
   var start = new Date().getTime();
