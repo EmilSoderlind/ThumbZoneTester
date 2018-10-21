@@ -21,8 +21,8 @@ export default class App extends React.Component {
     this.state = { 
       testingRow: -1,
       testingCol: -1,
-      numberOfCols: 6,
-      numberOfRows: 12,
+      numberOfCols: 2,
+      numberOfRows: 2,
       resultArray: -1,
       doneWithTest: false,
       highestResult: 0,
@@ -141,7 +141,8 @@ export default class App extends React.Component {
         }
       }
     }
-  
+
+
     this.setState({
       highestResult: highestNumberFound,
       lowestResult: lowestNumberFound

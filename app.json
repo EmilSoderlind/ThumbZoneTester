@@ -9,6 +9,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "githubUrl": "https://github.com/SkruvdragarN/ThumbZoneTester",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -21,6 +22,7 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.sone.thumbzonetester",
       "supportsTablet": true
     }
   }
